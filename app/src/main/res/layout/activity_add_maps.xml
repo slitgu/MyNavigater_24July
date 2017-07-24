@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="rmutsv.alisa.yusuf.mynavigater.AddMapsActivity">
+
+
+    <!--ToolBar-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolberTop"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/padding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <!--Title-->
+            <TextView
+                android:layout_centerInParent="true"
+                android:textColor="@color/TextcolorPrimary"
+                android:textStyle="bold"
+                android:textSize="@dimen/h1"
+                android:text="Add Map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--Icon Save-->
+            <ImageView
+                android:id="@+id/imvSave"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/ic_add_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <!--Icon Back-->
+            <ImageView
+                android:id="@+id/imvBack"
+                android:layout_alignParentLeft="true"
+                android:src="@mipmap/ic_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <!--Content-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolberTop"
+        android:layout_alignParentStart="true">
+
+        <!--Name-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/maigin"
+            android:layout_marginTop="@dimen/maigin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Name :"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/h2"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+               android:layout_marginRight="@dimen/maigin"
+                android:layout_weight="2"
+                android:background="@color/colorPrimaryLight"
+                android:hint="Name of Map :"
+                android:padding="3dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="@dimen/h2" />
+
+        </LinearLayout>
+
+        <!--Date-->
+        <LinearLayout
+            android:layout_marginLeft="@dimen/maigin"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:textSize="@dimen/h2"
+                android:text="Date :"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="21/07/2017"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/h2" />
+
+        </LinearLayout>
+
+        <!--Distance-->
+        <LinearLayout
+            android:layout_marginBottom="@dimen/maigin"
+            android:layout_marginLeft="@dimen/maigin"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.65"
+                android:text="Distance :"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/h2" />
+
+            <TextView
+                android:id="@+id/txtDistance"
+                android:layout_width="18dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.20"
+                android:text="Please Click Stop"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/h2" />
+
+        </LinearLayout>
+
+
+        <!--Aboyt Map-->
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="rmutsv.alisa.yusuf.mynavigater.AddMapsActivity" />
+
+    </LinearLayout>
+
+    <!--FoodBar-->
+    <LinearLayout
+        android:background="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/linBotton"
+        android:padding="@dimen/padding"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <!--Icon Start-->
+            <ImageView
+                android:id="@+id/imvStart"
+                android:src="@mipmap/ic_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/TextcolorPrimary"
+                android:text="Start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!--Stop-->
+        <LinearLayout
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <!--Icon Start-->
+            <ImageView
+                android:id="@+id/imvStop"
+                android:src="@mipmap/ic_add_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/TextcolorPrimary"
+                android:text="Stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <!--Icon Refresh-->
+            <ImageView
+                android:id="@+id/imvRefresh"
+                android:src="@mipmap/ic_add_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/TextcolorPrimary"
+                android:text="Refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
