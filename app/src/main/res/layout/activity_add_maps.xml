@@ -14,7 +14,9 @@
         android:background="@color/colorPrimary"
         android:padding="@dimen/padding"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -34,10 +36,11 @@
             <!--Icon Save-->
             <ImageView
                 android:id="@+id/imvSave"
-                android:layout_alignParentRight="true"
-                android:src="@mipmap/ic_add_map"
+                android:src="@mipmap/ic_saveeee"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
 
 
             <!--Icon Back-->
@@ -207,7 +210,7 @@
             <!--Icon Start-->
             <ImageView
                 android:id="@+id/imvStop"
-                android:src="@mipmap/ic_add_map"
+                android:src="@mipmap/ic_stopppp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -230,7 +233,7 @@
             <!--Icon Refresh-->
             <ImageView
                 android:id="@+id/imvRefresh"
-                android:src="@mipmap/ic_add_map"
+                android:src="@mipmap/ic_refreshhhh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
