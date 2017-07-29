@@ -24,6 +24,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
@@ -39,6 +40,7 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
     private double latADouble, lngADouble;
     private boolean statusABoolean = true;
     private MarkerOptions userMarkerOptions;
+    private Marker userMarker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -194,11 +196,15 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
 
         try {
 
+            if (userMarker != null) {
+                userMarker.remove();
+            }
+
             LatLng latLng = new LatLng(latADouble, lngADouble);
 
             userMarkerOptions = new MarkerOptions();
             userMarkerOptions.position(latLng).icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_user_marker));
-            mMap.addMarker(userMarkerOptions);
+            userMarker =  mMap.addMarker(userMarkerOptions);
 
         } catch (Exception e) {
             e.printStackTrace();
