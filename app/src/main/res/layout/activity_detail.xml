@@ -105,7 +105,7 @@
                         android:id="@+id/imvGotoLocation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_marker" />
+                        android:src="@mipmap/ic_user_marker" />
 
                     <TextView
                         android:textColor="@color/TextcolorPrimary"
