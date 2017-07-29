@@ -38,6 +38,7 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
     private Criteria criteria;
     private double latADouble, lngADouble;
     private boolean statusABoolean = true;
+    private MarkerOptions userMarkerOptions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,13 +86,20 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
 
                 if (statusABoolean) {
 
-                    createMap(latADouble, lngADouble);
+                    myCreateMap(latADouble, lngADouble);
 
                     statusABoolean = false;
                 }
 
             }
         });
+    }
+
+    private void myCreateMap(double latADouble, double lngADouble) {
+
+        LatLng latLng = new LatLng(latADouble, lngADouble);
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
+
     }
 
     @Override
@@ -166,6 +174,10 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
         //Todo
         checkLatLng();
 
+        if (!statusABoolean) {
+            createUserMarker();
+        }
+
 
         //Delay
         Handler handler = new Handler();
@@ -177,6 +189,23 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
         }, 3000);
 
     }   // loopController
+
+    private void createUserMarker() {
+
+        try {
+
+            LatLng latLng = new LatLng(latADouble, lngADouble);
+
+            userMarkerOptions = new MarkerOptions();
+            userMarkerOptions.position(latLng).icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_user_marker));
+            mMap.addMarker(userMarkerOptions);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
 
     private void checkLatLng() {
 
