@@ -37,6 +37,7 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
     private LocationManager locationManager;
     private Criteria criteria;
     private double latADouble, lngADouble;
+    private boolean statusABoolean = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +71,28 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
         //Loop Controller
         loopController();
 
+        //YourLocation Controller
+        yourLocationController();
+
 
     }   // Main Method
+
+    private void yourLocationController() {
+        ImageView imageView = (ImageView) findViewById(R.id.imvGotoLocation);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (statusABoolean) {
+
+                    createMap(latADouble, lngADouble);
+
+                    statusABoolean = false;
+                }
+
+            }
+        });
+    }
 
     @Override
     protected void onResume() {
@@ -274,8 +295,16 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
         mMap = googleMap;
 
         //Create Map
-        LatLng latLng = new LatLng(Double.parseDouble(latStrings[0]),
-                Double.parseDouble(lngStrings[0]));
+        double lat = Double.parseDouble(latStrings[0]);
+        double lng = Double.parseDouble(lngStrings[0]);
+        createMap(lat, lng);
+
+
+    }   // onMapReady
+
+    private void createMap(double douLat, double douLng) {
+        LatLng latLng = new LatLng(douLat, douLng);
+
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
 
         //Create Marker
@@ -306,8 +335,6 @@ public class DetailActivity extends FragmentActivity implements OnMapReadyCallba
 
         polylineOptions.width(5).color(Color.RED);
         mMap.addPolyline(polylineOptions);
-
-
-    }   // onMapReady
+    }
 
 }   // Main Class
