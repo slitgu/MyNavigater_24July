@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toStartOf="@+id/linBotton"
-                android:layout_marginEnd="83dp" />
+                android:layout_marginEnd="30dp" />
 
             <!--Group Icon-->
             <LinearLayout
@@ -87,6 +87,29 @@
                     <TextView
                         android:textColor="@color/TextcolorPrimary"
                         android:text="Edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <!--GoToLocation-->
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <!--Icon Start-->
+                    <ImageView
+                        android:id="@+id/imvGotoLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/ic_user_marker" />
+
+                    <TextView
+                        android:textColor="@color/TextcolorPrimary"
+                        android:text="Your Location"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
